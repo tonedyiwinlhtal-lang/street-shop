@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOTS | Premium Streetwear</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="logo">KING OF THE <span>STREET</span></div>
+        <div class="nav-icons">
+            <button onclick="checkStatus()" title="Track Order"><i class="fa fa-truck"></i></button>
+            <button onclick="toggleCart()" id="cartBtn"><i class="fa fa-shopping-cart"></i> <span id="cartCount">0</span></button>
+        </div>
+    </nav>
+
+    <div class="header-tools">
+        <div class="search-box">
+            <i class="fa fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchProducts()">
+        </div>
+        <div class="menu-bar">
+            <button class="cat-btn active" onclick="filterItems('All')">All</button>
+            <button class="cat-btn" onclick="filterItems('Clothing')">👕 Clothing</button>
+            <button class="cat-btn" onclick="filterItems('Cosmetic')">💄 Cosmetic</button>
+            <button class="cat-btn" onclick="filterItems('Electric')">🔌 Electric</button>
+            <button class="cat-btn" onclick="filterItems('Game Diamond')">💎 Diamond</button>
+        </div>
+    </div>
+
+    <div class="shop-grid" id="shop"></div>
+
+    <div class="review-section">
+        <h3><i class="fa fa-star"></i> Customer Feedbacks</h3>
+        <div id="reviewDisplay" class="review-container"></div>
+    </div>
+
+    <div id="cartSidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Shopping Cart</h3>
+            <button onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cartItems"></div>
+        <div class="cart-footer">
+            <h4 id="cartTotal">Total: 0 MMK</h4>
+            <button class="checkout-btn" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <h3>Payment QR</h3>
+            <img src="https://i.postimg.cc/9FqjxtMV/Screenshot-2026-03-15-18-36-20-042-com-kbzbank-kpaycustomer.jpg" alt="KPay" width="200">
+            <button class="close-btn" onclick="closeModal('qrModal')">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
