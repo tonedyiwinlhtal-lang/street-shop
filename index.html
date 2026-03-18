@@ -3,58 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KOTS | Premium Streetwear</title>
+    <title>KOTS | Streetwear Elite</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="top-nav">
+    <nav class="glass-nav">
         <div class="logo">KING OF THE <span>STREET</span></div>
-        <div class="nav-icons">
-            <button onclick="checkStatus()" title="Track Order"><i class="fa fa-truck"></i></button>
-            <button onclick="toggleCart()" id="cartBtn"><i class="fa fa-shopping-cart"></i> <span id="cartCount">0</span></button>
+        <div class="nav-right">
+            <button class="icon-btn" onclick="checkStatus()"><i class="fa fa-truck-fast"></i></button>
+            <button class="icon-btn cart-trigger" onclick="toggleCart()">
+                <i class="fa fa-shopping-bag"></i>
+                <span id="cartCount">0</span>
+            </button>
         </div>
     </nav>
 
-    <div class="header-tools">
-        <div class="search-box">
+    <header class="hero">
+        <h1>LEVEL UP YOUR <br><span>STREET STYLE</span></h1>
+        <p>Premium Quality. Street Culture. Defined.</p>
+    </header>
+
+    <div class="search-section">
+        <div class="search-glass">
             <i class="fa fa-search"></i>
-            <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchProducts()">
+            <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
         </div>
-        <div class="menu-bar">
-            <button class="cat-btn active" onclick="filterItems('All')">All</button>
-            <button class="cat-btn" onclick="filterItems('Clothing')">👕 Clothing</button>
-            <button class="cat-btn" onclick="filterItems('Cosmetic')">💄 Cosmetic</button>
-            <button class="cat-btn" onclick="filterItems('Electric')">🔌 Electric</button>
-            <button class="cat-btn" onclick="filterItems('Game Diamond')">💎 Diamond</button>
+        <div class="category-pills">
+            <button class="pill active" onclick="filterItems('All')">All</button>
+            <button class="pill" onclick="filterItems('Clothing')">Clothing</button>
+            <button class="pill" onclick="filterItems('Cosmetic')">Cosmetic</button>
+            <button class="pill" onclick="filterItems('Electric')">Electric</button>
+            <button class="pill" onclick="filterItems('Game Diamond')">Diamond</button>
         </div>
     </div>
 
-    <div class="shop-grid" id="shop"></div>
+    <main class="shop-grid" id="shop"></main>
 
-    <div class="review-section">
-        <h3><i class="fa fa-star"></i> Customer Feedbacks</h3>
-        <div id="reviewDisplay" class="review-container"></div>
-    </div>
+    <section class="review-box">
+        <h3><i class="fa fa-star" style="color:#ff4757"></i> Community Feedbacks</h3>
+        <div id="reviewDisplay" class="review-slider"></div>
+    </section>
 
-    <div id="cartSidebar" class="sidebar">
+    <div id="cartSidebar" class="sidebar-glass">
         <div class="sidebar-header">
-            <h3>Shopping Cart</h3>
-            <button onclick="toggleCart()">&times;</button>
+            <h3>Your Bag</h3>
+            <button onclick="toggleCart()" class="close-btn">&times;</button>
         </div>
-        <div id="cartItems"></div>
-        <div class="cart-footer">
-            <h4 id="cartTotal">Total: 0 MMK</h4>
-            <button class="checkout-btn" onclick="checkout()">Checkout</button>
-        </div>
-    </div>
-
-    <div id="qrModal" class="modal">
-        <div class="modal-content">
-            <h3>Payment QR</h3>
-            <img src="https://i.postimg.cc/9FqjxtMV/Screenshot-2026-03-15-18-36-20-042-com-kbzbank-kpaycustomer.jpg" alt="KPay" width="200">
-            <button class="close-btn" onclick="closeModal('qrModal')">Close</button>
+        <div id="cartItems" class="cart-body"></div>
+        <div class="cart-total-box">
+            <div class="total-row"><span>Total:</span> <span id="cartTotal">0 MMK</span></div>
+            <button class="premium-btn" onclick="checkout()">PLACE ORDER</button>
         </div>
     </div>
 
